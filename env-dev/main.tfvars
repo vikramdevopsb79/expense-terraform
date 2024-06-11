@@ -1,7 +1,7 @@
 env = "dev"
 components = {
-  frontend = {
-    name          = "frontend"
+  Frontend = {
+    name          = "Frontend"
     instance_type = "t3.small"
     port_no       = 80
 
