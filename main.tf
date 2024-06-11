@@ -1,10 +1,10 @@
 module "frontend" {
   depends_on = [module.backend]
   source = "git::https://github.com/vikramdevopsb79/tf-module-app.git"
-  instance_type = var.components["frontend"]["instance_type"]
-  name          = var.components["frontend"]["name"]
+  instance_type = var.components["Frontend"]["instance_type"]
+  name          = var.components["Frontend"]["name"]
   env           = var.env
-  port_no       = var.components["frontend"]["port_no"]
+  port_no       = var.components["Frontend"]["port_no"]
 
 }
 
