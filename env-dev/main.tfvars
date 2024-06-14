@@ -9,7 +9,7 @@ components = {
   mysql = {
     name          = "mysql"
     instance_type = "t3.small"
-    port_no       = 80
+    port_no       = 3306
 
   }
   backend = {
