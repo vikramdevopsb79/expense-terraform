@@ -37,3 +37,16 @@ tags = {
   env = "dev"
   created_with = "terraform"
 }
+eks = {
+  main = {
+    eks_version = "1.30"
+    node_groups = {
+      ng1 = {
+        instance_types = ["t3.large"]
+        capacity_type  = "SPOT"
+        node_max_size  = 5
+        node_min_size  = 1
+      }
+    }
+  }
+}
