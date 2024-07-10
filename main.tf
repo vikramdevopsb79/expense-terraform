@@ -50,7 +50,7 @@ module "vpc" {
   lb_subnet_cidr = each.value["lb_subnet_cidr"]
   eks_subnet_cidr = each.value["eks_subnet_cidr"]
   db_subnet_cidr = each.value["db_subnet_cidr"]
-
+  azs = each.value["azs"]
   tags = var.tags
   env        = var.env
 
