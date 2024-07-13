@@ -65,6 +65,9 @@ resource "null_resource" "test2" {
 output "lb_subnet" {
   value = var.vpc["main"]["lb_subnet_cidr"]
 }
+output "vpc" {
+  value = var.vpc
+}
 module "eks" {
   source = "git::https://github.com/raghudevopsb79/tf-module-eks.git"
 
