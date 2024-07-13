@@ -1,7 +1,7 @@
 # variable "components" {}
 
 #
-# variable "SSH_PASSWORD" {}
+variable "SSH_PASSWORD" {}
 # variable "prometheus_servers" {}
 # variable "ami" {}
 variable "env" {}
