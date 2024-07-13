@@ -59,6 +59,12 @@ module "vpc" {
   env        = var.env
 
 }
+resource "null_resource" "test2" {
+  for_each = var.vpc
+}
+output "lb_subnet" {
+  value = var.vpc["main"]["lb_subnet_cidr"]
+}
 module "eks" {
   source = "git::https://github.com/raghudevopsb79/tf-module-eks.git"
 
