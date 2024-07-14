@@ -50,7 +50,6 @@ module "vpc" {
   lb_subnet_cidr = each.value["lb_subnet_cidr"]
   eks_subnet_cidr = each.value["eks_subnet_cidr"]
   db_subnet_cidr = each.value["db_subnet_cidr"]
-  job = module.vpc.lb_subnet
 #   azs = each.value["azs"]
 #   default_vpc_id = each.value["default_vpc_id"]
 #   default_vpc_cidr = each.value["default_vpc_cidr"]
@@ -59,9 +58,9 @@ module "vpc" {
 #   env        = var.env
 
 }
-# resource "null_resource" "test2" {
-#   for_each = var.vpc
-# }
+output "lb_subnet_ids" {
+  value = module.vpc.lb_subnets
+}
 
 
 
