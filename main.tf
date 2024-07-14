@@ -50,17 +50,17 @@ module "vpc" {
   lb_subnet_cidr = each.value["lb_subnet_cidr"]
   eks_subnet_cidr = each.value["eks_subnet_cidr"]
   db_subnet_cidr = each.value["db_subnet_cidr"]
-#   azs = each.value["azs"]
-#   default_vpc_id = each.value["default_vpc_id"]
-#   default_vpc_cidr = each.value["default_vpc_cidr"]
-#   default_vpc_rt = each.value["default_vpc_rt"]
-#   tags = var.tags
-#   env        = var.env
+  azs = each.value["azs"]
+  default_vpc_id = each.value["default_vpc_id"]
+  default_vpc_cidr = each.value["default_vpc_cidr"]
+  default_vpc_rt = each.value["default_vpc_rt"]
+  tags = var.tags
+  env        = var.env
 
 }
-output "lb_subnet_ids" {
-  value = module.vpc.olb_subnets
-}
+# output "lb_subnet_ids" {
+#   value = module.vpc.olb_subnets
+# }
 
 
 
@@ -71,7 +71,9 @@ module "eks" {
   eks_version = each.value["eks_version"]
   node_groups = each.value["node_groups"]
 
-  subnet_ids = module.vpc["main"].eks_subnet_ids
+  subnet_ids      = module.vpc["main"].db_subnet_ids
+  eks_subnet_cidr = module.vpc["main"].eks_subnet_cidr
+  vpc_id          = module.vpc["main"].vpc_id
 
   tags = var.tags
   env  = var.env
