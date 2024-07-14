@@ -41,6 +41,7 @@
 #
 # }
 # here module is introduced because a new vpc may common future and it is local module couldn't vpc module
+
 module "vpc" {
   source     = "git::https://github.com/vikramdevopsb79/tf-module-vpc.git"
 
@@ -59,12 +60,12 @@ module "vpc" {
 
 }
 # output "lb_subnet_ids" {
-#   value = module.vpc.olb_subnets
+#   value = module.vpc.
 # }
 
-output "lb_subnet_ids" {
-  value = module.vpc.lb_subnet_ids
-}
+# output "lb_subnet_ids" {
+#   value = module.vpc.lb_subnet_ids
+# }
 
 
 module "eks" {
