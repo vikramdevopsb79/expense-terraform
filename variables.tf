@@ -1,7 +1,4 @@
 # variable "components" {}
-
-#
-
 # variable "prometheus_servers" {}
 # variable "ami" {}
 
