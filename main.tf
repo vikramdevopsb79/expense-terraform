@@ -62,6 +62,9 @@ module "vpc" {
 #   value = module.vpc.olb_subnets
 # }
 
+output "lb_subnet_ids" {
+  value = module.vpc.lb_subnet_ids
+}
 
 
 module "eks" {
