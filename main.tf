@@ -59,9 +59,6 @@ module "vpc" {
   env        = var.env
 
 }
-output "lb_subnet_ids" {
-  value = module.vpc.vpc_cidr
-}
 
 # output "lb_subnet_ids" {
 #   value = module.vpc.lb_subnet_ids
