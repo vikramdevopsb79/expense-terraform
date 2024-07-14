@@ -46,7 +46,7 @@ module "vpc" {
   source     = "git::https://github.com/vikramdevopsb79/tf-module-vpc.git"
 
 
-  for_each   = vpc
+  for_each   = var.vpc
   vpc_cidr_block = each.value["vpc_cidr_block"]
   lb_subnet_cidr = each.value["lb_subnet_cidr"]
   eks_subnet_cidr = each.value["eks_subnet_cidr"]
