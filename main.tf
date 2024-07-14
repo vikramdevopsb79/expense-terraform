@@ -59,7 +59,7 @@ module "vpc" {
 
 }
 output "lb_subnet_ids" {
-  value = module.vpc.lb_subnets
+  value = module.vpc.olb_subnets
 }
 
 
