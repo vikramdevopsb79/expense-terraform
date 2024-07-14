@@ -75,9 +75,7 @@ module "eks" {
   eks_version = each.value["eks_version"]
   node_groups = each.value["node_groups"]
 
-  subnet_ids      = module.vpc.db_subnet_ids
-  eks_subnet_cidr = module.vpc.eks_subnet_cidr
-  vpc_id          = module.vpc.vpc_id
+  subnet_ids = module.vpc["main"].eks_subnet_ids
 
   tags = var.tags
   env  = var.env
