@@ -43,7 +43,7 @@ eks = {
     node_groups = {
       ng1 = {
         instance_types = ["t3.large"]
-        capacity_type  = "SPOT"
+        capacity_type  = "ON-DEMAND"
         node_max_size  = 5
         node_min_size  = 1
       }
