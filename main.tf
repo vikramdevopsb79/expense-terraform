@@ -60,9 +60,9 @@ module "vpc" {
 
 }
 
-output "lb_subnet_ids" {
-  value = module.vpc.tag_module
-}
+# output "lb_subnet_ids" {
+#   value = module.vpc.tag_module
+# }
 
 
 module "eks" {
