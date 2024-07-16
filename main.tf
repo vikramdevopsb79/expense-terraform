@@ -79,7 +79,7 @@ module "eks" {
 }
 
 module "rds" {
-  source = "git::https://github.com/raghudevopsb79/tf-module-rds.git"
+  source = "git::https://github.com/vikramdevopsb79/tf-module-rds.git"
 
   for_each        = var.rds
   engine          = each.value["engine"]
