@@ -11,3 +11,4 @@ variable "eks" {}
 variable "env" {}
 variable "vpc" {}
 variable "vault_token" {}
+variable "rds" {}
