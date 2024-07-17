@@ -91,6 +91,3 @@ module "rds" {
   eks_subnet_cidr = module.vpc["main"].eks_subnet_cidr
   vpc_id          = module.vpc["main"].vpc_id
 }
-output "path" {
-  value = module.eks.module_path
-}
