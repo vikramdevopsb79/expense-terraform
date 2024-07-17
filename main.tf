@@ -65,29 +65,29 @@ module "vpc" {
 # }
 
 
-# module "eks" {
-#   source = "git::https://github.com/vikramdevopsb79/tf-module-eks.git"
-#
-#   for_each    = var.eks
-#   eks_version = each.value["eks_version"]
-#   node_groups = each.value["node_groups"]
-#
-#   subnet_ids = module.vpc["main"].eks_subnet_ids
-#
-#   tags = var.tags
-#   env  = var.env
-# }
+module "eks" {
+  source = "git::https://github.com/vikramdevopsb79/tf-module-eks.git"
 
-# module "rds" {
-#   source = "git::https://github.com/vikramdevopsb79/tf-module-rds.git"
-#
-#   for_each        = var.rds
-#   engine          = each.value["engine"]
-#   engine_version  = each.value["engine_version"]
-#   env             = var.env
-#   family          = each.value["family"]
-#   instance_class  = each.value["instance_class"]
-#   subnet_ids      = module.vpc["main"].db_subnet_ids
-#   eks_subnet_cidr = module.vpc["main"].eks_subnet_cidr
-#   vpc_id          = module.vpc["main"].vpc_id
-# }
+  for_each    = var.eks
+  eks_version = each.value["eks_version"]
+  node_groups = each.value["node_groups"]
+
+  subnet_ids = module.vpc["main"].eks_subnet_ids
+
+  tags = var.tags
+  env  = var.env
+}
+
+module "rds" {
+  source = "git::https://github.com/vikramdevopsb79/tf-module-rds.git"
+
+  for_each        = var.rds
+  engine          = each.value["engine"]
+  engine_version  = each.value["engine_version"]
+  env             = var.env
+  family          = each.value["family"]
+  instance_class  = each.value["instance_class"]
+  subnet_ids      = module.vpc["main"].db_subnet_ids
+  eks_subnet_cidr = module.vpc["main"].eks_subnet_cidr
+  vpc_id          = module.vpc["main"].vpc_id
+}
