@@ -66,7 +66,7 @@ module "vpc" {
 
 
 module "eks" {
-  source = "git::https://github.com/raghudevopsb79/tf-module-eks.git"
+  source = "git::https://github.com/vikramdevopsb79/tf-module-eks.git"
 
   for_each    = var.eks
   eks_version = each.value["eks_version"]
